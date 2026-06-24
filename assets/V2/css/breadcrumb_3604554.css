@@ -1,0 +1,105 @@
+:root {
+    --breadcrumb-color: #4f86f7;
+}
+
+
+
+/*General styles for breadcrumb*/
+nav.breadcrumb-style {
+    display: block;
+}
+
+.breadcrumb.breadcrumb-custom {
+    padding: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .56rem 1.13rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: transparent;
+    border-radius: .25rem;
+}
+
+.breadcrumb-item:first-child {
+    display: none !important;
+}
+
+.breadcrumb.breadcrumb-custom .breadcrumb-item a {
+    position: relative;
+    color: inherit;
+    display: inline-block;
+    vertical-align: top;
+}
+.breadcrumb.breadcrumb-custom .breadcrumb-item {
+    font-size: .875rem;
+    background-color: var(--breadcrumb-color);
+    padding: .56rem 10px;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .breadcrumb.breadcrumb-custom .breadcrumb-item:last-child {
+        background-color: transparent;
+        color: var(--text-color);
+    }
+
+    .breadcrumb.breadcrumb-custom .breadcrumb-item a::before {
+        z-index: 3;
+    }
+
+    .breadcrumb.breadcrumb-custom .breadcrumb-item a::after {
+        border-top: 21px solid transparent;
+        border-bottom: 22px solid transparent;
+        z-index: 2;
+    }
+.breadcrumb.breadcrumb-custom .breadcrumb-item:before {
+    content: "";
+}
+
+.breadcrumb.breadcrumb-custom .breadcrumb-item a:before, .breadcrumb.breadcrumb-custom .breadcrumb-item a:after {
+    position: absolute;
+    top: -10px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 21px solid transparent;
+    border-bottom: 21px solid transparent;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    float: none;
+}
+/*RTL direction styles of breadcrumb*/
+html:dir(rtl) .breadcrumb.breadcrumb-custom .breadcrumb-item a::before {
+    border-right-style: solid;
+    border-right-width: 12px;
+    left: -22px;
+    border-right-color: var(--breadcrumb-color);
+}
+
+html:dir(rtl) .breadcrumb.breadcrumb-custom .breadcrumb-item a::after {
+    left: -23px;
+    border-right: 12px solid #ffffff;
+}
+
+/*LTR direction styles of breadcrumb*/
+html:dir(ltr) .breadcrumb.breadcrumb-custom .breadcrumb-item a::before {
+    right: -22px;
+    border-left-style: solid;
+    border-left-width: 12px;
+    border-left-color: var(--breadcrumb-color);
+}
+
+    html:dir(ltr) .breadcrumb.breadcrumb-custom .breadcrumb-item a::after {
+        border-left: 12px solid #ffffff;
+        right: -23px;
+    }
+
+
